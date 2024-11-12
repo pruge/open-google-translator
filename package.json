@@ -1,0 +1,80 @@
+{
+    "name": "open-google-translator",
+    "version": "0.1.0",
+    "author": "",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vidya-hub/open-google-translator.git"
+    },
+    "main": "./dist/open-google-translator.cjs",
+    "module": "./dist/open-google-translator.esm.js",
+    "jsdelivr": "./dist/open-google-translator.iife.js",
+    "exports": {
+        ".": {
+            "require": "./dist/open-google-translator.cjs",
+            "import": "./dist/open-google-translator.esm.js",
+            "types": "./dist/open-google-translator.d.ts"
+        },
+        "./dist/": {
+            "import": "./dist/",
+            "require": "./dist/",
+            "types": "./dist/"
+        }
+    },
+    "scripts": {
+        "dev": "vite --host",
+        "prebuild": "rm -rf dist/*",
+        "build": "tsc && vite build",
+        "postbuild": "dts-bundle-generator --config ./dts-bundle-generator.config.ts",
+        "test": "vitest",
+        "test:coverage": "vitest --coverage",
+        "format": "prettier . --write",
+        "upgrade": "upgradeps",
+        "release": "npm run build && np"
+    },
+    "bugs": {
+        "url": "https://github.com/vidya-hub/open-google-translator/issues"
+    },
+    "description": "Package description.",
+    "files": [
+        "dist",
+        "README.md",
+        "LICENSE.md",
+        "CHANGELOG.md",
+        "src",
+        "package.json"
+    ],
+    "homepage": "https://github.com/vidya-hub/open-google-translator#readme",
+    "keywords": [
+        "some",
+        "keywords"
+    ],
+    "license": "MIT",
+    "private": false,
+    "type": "module",
+    "types": "./dist/open-google-translator.d.ts",
+    "typesVersions": {
+        "*": {
+            "*": [
+                "./dist/open-google-translator.d.ts"
+            ]
+        }
+    },
+    "typings": "./dist/open-google-translator.d.ts",
+    "devDependencies": {
+        "@types/jsdom": "^21.1.6",
+        "@types/node": "^20.11.5",
+        "@vitest/coverage-v8": "^1.2.1",
+        "dts-bundle-generator": "^9.2.4",
+        "jsdom": "^24.1.0",
+        "lint-staged": "^15.2.0",
+        "np": "^10.0.6",
+        "prettier": "^3.2.4",
+        "terser": "^5.31.1",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.3.3",
+        "upgradeps": "^2.0.6",
+        "vite": "^5.0.12",
+        "vitest": "^1.2.1"
+    }
+}
